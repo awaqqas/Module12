@@ -47,6 +47,7 @@ function buildMetadata(sample) {
     // tags for each key-value in the metadata.
     Object.entries(result).forEach(([key, value]) => {
       panel.append("h6").text(`${key}: ${value}`);
+      {console.log(key + ': ' + value);}
     });
 
   });
