@@ -119,8 +119,8 @@ function buildCharts(sample) {
         text: otu_labels,
         mode: "markers",
         marker: {
-          color: ids,
-          size: values,
+          color: otu_ids,
+          size: sample_values,
           }
       }
    
