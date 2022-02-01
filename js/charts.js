@@ -96,13 +96,13 @@ function buildCharts(sample) {
     // 10. Use Plotly to plot the data with the layout. 
    
   });
- Plotly.newPlot('bar', barData, barLayout);
-}
+ 
+
 
 
   // Bar and Bubble charts
 // Create the buildCharts function.
-function buildCharts(sample) {
+
   // Use d3.json to load and retrieve the samples.json file 
    d3.json("samples.json").then((data) => {
     var samples = data.samples;
@@ -139,6 +139,7 @@ function buildCharts(sample) {
     
   });
   Plotly.newPlot("bubble", bubbleData, bubbleLayout);
+  Plotly.newPlot('bar', barData, barLayout);
 }
 
 
