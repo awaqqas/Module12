@@ -125,7 +125,8 @@ function buildCharts(sample) {
   
 var gaugeData = [{
   
-		domain: { x: [0, 1], y: [0, 1] },
+		domain: { x: otu_ids,
+      y: sample_values },
 		value: 270,
 		title: { text: "Speed" },
 		type: "indicator",
