@@ -120,7 +120,7 @@ function buildCharts(sample) {
    };
 
   // 3. Use Plotly to plot the data with the layout.
- Plotly.newPlot("bubble", bubbleData, bubbleLayout);
+ Plotly.newPlot('bar', barData, barLayout, "bubble", bubbleData, bubbleLayout);
   });
   
 }
