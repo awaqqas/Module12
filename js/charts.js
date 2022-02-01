@@ -5,7 +5,7 @@ function init() {
   // Use the list of sample names to populate the select options
    d3.json("samples.json").then((sample) => {
       var subjectID = sample.names;
-      subjectID.forEach((sample) => {
+      subjectID.forEach((ID) => {
           selector
           .append('option')
           .text(ID)
