@@ -190,23 +190,48 @@ var gaugeData = [traceGauge, traceNeedleCenter];
   
   // 5. Create the layout for the gauge chart.
   var gaugeLayout = { 
-      shapes:[{
-          type: 'path',
-          path: path,
-          fillcolor: '#2F6497',
-          line: {
-            color: '#2F6497'
-          }
-        }],
-  
-      title: '<b>Belly Button Washing Frequency</b> <br> <b>Scrub Per Week</b>',
-      height: 550,
-      width: 550,
-      xaxis: {zeroline:false, showticklabels:false,
-                 showgrid: false, range: [-1, 1]},
-      yaxis: {zeroline:false, showticklabels:false,
-                 showgrid: false, range: [-1, 1]},
-    };
+      // draw the needle pointer shape using path defined above
+      shapes: [{
+        type: 'path',
+        path: path,
+        fillcolor: '850000',
+        line: {
+            color: '850000'
+        }
+    }],
+    font: {
+        family: 'Quicksand'
+    },
+    hoverlabel: {
+        font: {
+            family: 'Quicksand',
+            size: 16
+        }
+    },
+    title: {
+        text: `<b>Test Subject ${id}</b><br><b>Belly Button Washing Frequency</b><br><br>Scrubs per Week`,
+        font: {
+            size: 18,
+            color: 'rgb(34,94,168)'
+        },
+    },
+    height: 500,
+    width: 500,
+    xaxis: {
+        zeroline: false,
+        showticklabels: false,
+        showgrid: false,
+        range: [-1, 1],
+        fixedrange: true // disable zoom
+    },
+    yaxis: {
+        zeroline: false,
+        showticklabels: false,
+        showgrid: false,
+        range: [-0.5, 1.5],
+        fixedrange: true // disable zoom
+    }
+};
 
 
   // 6. Use Plotly to plot the gauge data and layout.
