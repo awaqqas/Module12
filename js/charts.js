@@ -3,15 +3,15 @@ function init() {
   var selector = d3.select("#selDataset");
 
   // Use the list of sample names to populate the select options
-   d3.json("samples.json").then((sample) => {
-      var subjectID = sample.names;
-      subjectID.forEach((ID) => {
-          selector
-          .append('option')
-          .text(ID)
-          .property('value', ID);
-      });
-    
+  d3.json("samples.json").then((data) => {
+    var sampleNames = data.names;
+
+    sampleNames.forEach((sample) => {
+      selector
+        .append("option")
+        .text(sample)
+        .property("value", sample);
+    });
 
     // Use the first sample from the list to build the initial plots
     var firstSample = sampleNames[0];
@@ -22,6 +22,7 @@ function init() {
 
 // Initialize the dashboard
 init();
+
 
 function optionChanged(newSample) {
   // Fetch new data each time a new sample is selected
