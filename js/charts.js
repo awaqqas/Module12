@@ -3,18 +3,18 @@ function init() {
   var selector = d3.select("#selDataset");
 
   // Use the list of sample names to populate the select options
-  d3.json("samples.json").then((data) => {
-    var sampleNames = data.names;
-
-    sampleNames.forEach((sample) => {
-      selector
-        .append("option")
-        .text(sample)
-        .property("value", sample);
-    });
+   d3.json("samples.json").then((data) => {
+      var subjectID = data.names;
+      subjectID.forEach((ID) => {
+          selector
+          .append('option')
+          .text(ID)
+          .property('value', ID);
+      });
+    
 
     // Use the first sample from the list to build the initial plots
-    var firstSample = sampleNames[0];
+    var firstSample = subjectID[0];
     buildCharts(firstSample);
     buildMetadata(firstSample);
   });
@@ -95,7 +95,7 @@ function buildCharts(sample) {
    };
     // 10. Use Plotly to plot the data with the layout. 
 
-   Plotly.Plot('bar', barData, barLayout);
+   Plotly.newPlot('bar', barData, barLayout);
    // 1. Create the trace for the bubble chart.
    var bubbleData = [
     {
@@ -120,7 +120,7 @@ function buildCharts(sample) {
    };
 
   // 3. Use Plotly to plot the data with the layout.
- Plotly.Plot("bubble", bubbleData, bubbleLayout);
+ Plotly.newPlot("bubble", bubbleData, bubbleLayout);
   });
   
 }
