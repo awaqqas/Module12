@@ -97,9 +97,9 @@ function buildCharts(sample) {
    Plotly.newPlot('bar', barData, barLayout);
    var bubbleData = [
     {
-     x: ids,
-     y: values,
-     text: labels,
+     x: otu_ids,
+     y: sample_values,
+     text: otu_labels,
      mode: "markers",
      markers: {
      color: ids,
