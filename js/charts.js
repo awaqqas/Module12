@@ -92,56 +92,40 @@ function buildCharts(sample) {
       title: "Top 10 Microbial Species in Belly Buttons",
       xaxis: { title: "Bacteria Sample Values" },
       yaxis: { title: "OTU IDs" }
-  };
+   };
     // 10. Use Plotly to plot the data with the layout. 
-  Plotly.newPlot('bar', barData, barLayout);
+   Plotly.newPlot('bar', barData, barLayout);
+   var bubbleData = [
+    {
+     x: ids,
+     y: values,
+     text: labels,
+     mode: "markers",
+     markers: {
+     color: ids,
+     size: values,
+     }
+   }
+
+   ];
+
+   // 2. Create the layout for the bubble chart.
+   var bubbleLayout = {
+   margin: { t: 0 },
+   xaxis: { title: "OTU ID" },
+   hovermode: "closest",
+ 
+   };
+
+// 3. Use Plotly to plot the data with the layout.
+Plotly.newPlot('bubble', bubbleData, bubbleLayout);
     
   });
-
+ }
 
   // Bar and Bubble charts
 // Create the buildCharts function.
 
-
-  // Use d3.json to load and retrieve the samples.json file 
-   d3.json("samples.json").then((data) => {
-       var samples= data.samples;
-       var resultsarray= samples.filter(sampleobject => sampleobject.id == sample);
-       var result= resultsarray[0];
-  
-       var ids = result.otu_ids;
-       var labels = result.otu_labels;
-       var values = result.sample_values;
-      
-    // 1. Create the trace for the bubble chart.
-          var bubbleData = [
-         {
-          x: ids,
-          y: values,
-          text: labels,
-          mode: "markers",
-          markers: {
-          color: ids,
-          size: values,
-          }
-      }
-   
-    ];
-
-    // 2. Create the layout for the bubble chart.
-     var bubbleLayout = {
-      margin: { t: 0 },
-      xaxis: { title: "OTU ID" },
-      hovermode: "closest",
-      
-    };
-
-    // 3. Use Plotly to plot the data with the layout.
-  Plotly.newPlot('bubble', bubbleData, bubbleLayout);
-
-});
- 
-}
 
 
   
