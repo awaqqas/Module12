@@ -111,7 +111,7 @@ function buildCharts(sample) {
     var otu_ids = result.otu_ids;
     var otu_labels = result.otu_labels; 
     
- Plotly.newPlot("bubble", bubbleData, bubbleLayout);
+ Plotly.newPlot();
 
     // 1. Create the trace for the bubble chart.
     var bubbleData = [
