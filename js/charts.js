@@ -11,6 +11,7 @@ function init() {
         .append("option")
         .text(sample)
         .property("value", sample);
+        {console.log(key + ': ' + value);}
     });
 
     // Use the first sample from the list to build the initial plots
@@ -47,7 +48,7 @@ function buildMetadata(sample) {
     // tags for each key-value in the metadata.
     Object.entries(result).forEach(([key, value]) => {
       panel.append("h6").text(`${key}: ${value}`);
-      {console.log(key + ': ' + value);}
+      
     });
 
   });
