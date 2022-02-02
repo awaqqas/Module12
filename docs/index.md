@@ -1,6 +1,10 @@
 ## Welcome to GitHub Pages
 
+<<<<<<< HEAD
 You can use the [editor on GitHub](https://github.com/awaqqas/Module12/edit/main/index.html) to maintain and preview the content for your website in Markdown files.
+=======
+You can use the [editor on GitHub](https://github.com/awaqqas/Module12/edit/main/docs/index.md) to maintain and preview the content for your website in Markdown files.
+>>>>>>> 335d9c36adde879ffe532cca162adaeda0498653
 
 Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
