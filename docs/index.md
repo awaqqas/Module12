@@ -1,7 +1,7 @@
 ## Welcome to GitHub Pages
 
 <<<<<<< HEAD
-You can use the [editor on GitHub](https://github.com/awaqqas/Module12/edit/main/index.html) to maintain and preview the content for your website in Markdown files.
+You can use the [editor on GitHub](https://github.com/awaqqas/Module12/edit/main/docs/index.html) to maintain and preview the content for your website in Markdown files.
 =======
 
 
